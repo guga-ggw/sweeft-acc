@@ -9,6 +9,7 @@ export const PopularImages = ({ query, input } : {query : any, input : string | 
       fetch(`https://api.unsplash.com/photos/?per_page=20&page=4&order_by=popular&client_id=UADwZ0jykzvKArb5OjGtNAj5r1GbTg5xWcbrAvm9FR0`).then((res) => {
         return res.json();
       }),
+      
   });
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const MainPage = () => {
 
   const filter = (props : string) => {
     const searchQuery = filterinput.current?.value;
+    
     fetch(`https://api.unsplash.com/search/photos/?per_page=20&page=${page}&order_by=popular&query=${searchQuery}&client_id=dtKCornSDnG6aTLF127US1398j8X11-0HOvRLnnguiQ`)
       .then((res) => res.json())
       .then((data) => {
